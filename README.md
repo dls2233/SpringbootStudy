@@ -22,4 +22,14 @@ version：定义当前项目版本号
 使用缩进表示层级关系，同层级左侧对齐，只允许使用空格（不允许使用Tab键）
 ==属性值前面添加空格（属性名与属性值之间使用冒号+空格作为分隔）==
  #号 表示注释
- 13.starter:是springboot为了简化开发时引依赖的过程而整出的一类"整合包"。
+12Mybatis：持久层框架，用于简化 JDBC 开发
+13.Java概念与数据库概念：类与表，属性与字段/列，对象与记录/行一一对应
+14.映射文件：使用mybatis的映射文件mapper并在其中编写sql语句进行代理开发，这能较好地解决原生的硬编码和后期维护问题。
+映射文件中的namespace与接口全类名的相同
+映射文件中编写sql语句的标签id属性与mapper接口中的方法名保持一致
+13.starter:是springboot为了简化开发时引依赖的过程而整出的一类"整合包"。
+14.@Componet:用来标注一个类，将该类填装到spring容器中
+15.@Autowired：自动填装
+16.@Configuration&@Bean：spring的配置类。
+17.@Service：这个注解主要是标注到业务逻辑层上，将其注入到spring容器中，方便将其注入到其他类中(例如controller)。本质上还是一个@Component。
+18.@Mappep；由mybatis提供，该spring容器由mybatis实现该接口，并让mybatis找到它，为该接口生成实现类，并最终放到spring容器中。
