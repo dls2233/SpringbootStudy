@@ -27,6 +27,27 @@ version：定义当前项目版本号
 14.映射文件：使用mybatis的映射文件mapper并在其中编写sql语句进行代理开发，这能较好地解决原生的硬编码和后期维护问题。
 映射文件中的namespace与接口全类名的相同
 映射文件中编写sql语句的标签id属性与mapper接口中的方法名保持一致
+15.收集数据的方法：
+  1. 如果查询出的数据只有一条，可以通过
+    1. 实体类对象接收
+    2. List集合接收
+    3. Map集合接收，结果{password=123456, sex=男, id=1, age=23, username=admin}
+  2. 如果查询出的数据有多条，一定不能用实体类对象接收，会抛异常TooManyResultsException，可以通过
+    1. 实体类类型的LIst集合接收
+    2. Map类型的LIst集合接收
+    3. 在mapper接口的方法上添加@MapKey注解
+16.resultMap：自定义映射，用于一对多或多对一或字段名和属性名不一致的情况
+17.resultMap中常用属性
+  resultMap标签:
+  id：表示自定义映射的唯一标识，不能重复
+  type：查询的数据要映射的实体类的类型  
+  子标签：  
+  id：设置主键的映射关系  
+  result：设置普通字段的映射关系  
+  子标签属性：  
+  property：设置映射关系中实体类中的属性名  
+  column：设置映射关系中表中的字段名
+18.@Param来自定义属性名称,然后就可以在映射文件中使用自定义属性名进行接收了
 13.starter:是springboot为了简化开发时引依赖的过程而整出的一类"整合包"。
 14.@Componet:用来标注一个类，将该类填装到spring容器中
 15.@Autowired：自动填装
